@@ -1,0 +1,92 @@
+:root {
+    --header-color: #03031b;
+    --sidebar-color: #09092e;
+    --main-color: #1a1a41;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, serif;
+    color: #fff;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: 100px 1fr;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Les composants ne sont pas des cases du grid : leurs enfants (header/aside) le deviennent. */
+app-header,
+app-sidebar {
+  display: contents;
+}
+
+/* ================================================================================================================== */
+/* HEADER */
+/* ================================================================================================================== */
+header {
+  grid-column: 1 / -1;
+  background: var(--header-color);
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  font-family: Times New Roman, serif;
+}
+
+header h1 {
+  margin: 0;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+header .logo img {
+  height: 80px;
+}
+
+/* ================================================================================================================== */
+/* SIDEBAR */
+/* ================================================================================================================== */
+aside {
+  background: var(--sidebar-color);
+  padding: 20px;
+}
+
+aside a {
+  color: #fff;
+  text-decoration: none;
+  background: #1a1a41;
+  padding: 15px;
+  border-radius: 10px;
+  display: block;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+aside a:hover {
+  background: #2a2a61;
+}
+
+aside a.active {
+  background: #2a2a61;
+  font-weight: bold;
+}
+
+/* ================================================================================================================== */
+/* MAIN */
+/* ================================================================================================================== */
+main {
+  background: var(--main-color);
+  overflow-y: auto;
+  padding: 20px;
+}
