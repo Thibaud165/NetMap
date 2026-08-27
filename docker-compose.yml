@@ -1,6 +1,8 @@
 services:
   netmap:
-    build: .
+    build:
+      context: .
+      network: host
     container_name: netmap
     restart: unless-stopped
     network_mode: host
