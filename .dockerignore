@@ -1,0 +1,11 @@
+.git
+.env
+data/
+**/__pycache__/
+*.pyc
+NetMap_frontend_model.html
+README.md
+.venv/
+docs/
+server/
+static/

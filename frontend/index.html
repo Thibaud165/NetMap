@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NetMap — Gestion d'adressage réseau</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="./assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#A9761F">
+  <link rel="stylesheet" href="./assets/app.css">
+  <style>
+    html, body { height: 100%; }
+    body { margin: 0; background: var(--bg); color: var(--ink);
+           font-family: 'Hanken Grotesk', system-ui, sans-serif;
+           -webkit-font-smoothing: antialiased; }
+    #app { min-height: 100vh; }
+    #nm-boot { display:flex; align-items:center; justify-content:center;
+               min-height:100vh; color:var(--ink-soft); font-size:14px; }
+  </style>
+  <script>
+    // Applique le thème enregistré immédiatement (évite le flash au chargement)
+    try {
+      var t = localStorage.getItem('netmap.theme');
+      if (t === 'dark' || t === 'light')
+        document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <div id="app"><div id="nm-boot">Chargement de NetMap…</div></div>
+  <script src="./assets/app.js"></script>
+</body>
+</html>

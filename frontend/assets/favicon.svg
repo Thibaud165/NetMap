@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- NetMap — même marque que le logo de l'en-tête (frontend/index.html) :
+       tuile ocre + graphe à 3 nœuds. Les couleurs suivent le thème du système. -->
+  <style>
+    .tile { fill: #A9761F }
+    .link { stroke: #20160A }
+    .node { fill: #20160A }
+    @media (prefers-color-scheme: dark) {
+      .tile { fill: #E6B048 }
+      .link { stroke: #1B1305 }
+      .node { fill: #1B1305 }
+    }
+  </style>
+  <rect class="tile" width="64" height="64" rx="15"/>
+  <g transform="translate(4.8 5.65) scale(0.85)">
+    <g class="link" fill="none" stroke-width="4.2" stroke-linecap="round">
+      <path d="M32 16 15 46"/>
+      <path d="M32 16 49 46"/>
+      <path d="M15 46h34"/>
+    </g>
+    <g class="node">
+      <circle cx="32" cy="16" r="7.5"/>
+      <circle cx="15" cy="46" r="7.5"/>
+      <circle cx="49" cy="46" r="7.5"/>
+    </g>
+  </g>
+</svg>
