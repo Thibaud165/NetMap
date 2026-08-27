@@ -1,31 +1,31 @@
 services:
-	netmap:
-		build: .
-    		container_name: netmap
-    		restart: unless-stopped
-    		network_mode: host
-    		
-    	cap_add:
-      		- NET_RAW
+  netmap:
+    build: .
+    container_name: netmap
+    restart: unless-stopped
+    network_mode: host
 
-    	volumes:
-      		- ./data:/data
+    cap_add:
+      - NET_RAW
 
-	environment:
-  		# Time between complete ping scans, in minutes
-  		NETMAP_SCAN_INTERVAL_MINUTES: "${NETMAP_SCAN_INTERVAL_MINUTES}"
+    volumes:
+      - ./data:/data
 
-  		# Timeout before a device is considered disconnected, in seconds
-  		NETMAP_PING_TIMEOUT_SECONDS: "${NETMAP_PING_TIMEOUT_SECONDS}"
+    environment:
+      # Time between complete ping scans, in minutes
+      NETMAP_SCAN_INTERVAL_MINUTES: "${NETMAP_SCAN_INTERVAL_MINUTES}"
 
-  		# Delay between each device during a scan, in seconds
-  		NETMAP_PING_SPACING_SECONDS: "${NETMAP_PING_SPACING_SECONDS}"
+      # Timeout before a device is considered disconnected, in seconds
+      NETMAP_PING_TIMEOUT_SECONDS: "${NETMAP_PING_TIMEOUT_SECONDS}"
 
-  		# Web interface port
-  		NETMAP_PORT: "${NETMAP_PORT}"
+      # Delay between each device during a scan, in seconds
+      NETMAP_PING_SPACING_SECONDS: "${NETMAP_PING_SPACING_SECONDS}"
 
- 		 NETMAP_PASSWORD: "${NETMAP_PASSWORD}"
+      # Web interface port
+      NETMAP_PORT: "${NETMAP_PORT}"
 
-  		# Separator displayed below the device name
-  		# Example: aa:bb:cc:11:22:33 \\\ Camera \\\ Garage
-  		NETMAP_FIELD_SEPARATOR: "${NETMAP_FIELD_SEPARATOR}"
+      NETMAP_PASSWORD: "${NETMAP_PASSWORD}"
+
+      # Separator displayed below the device name
+      # Example: aa:bb:cc:11:22:33 \\\ Camera \\\ Garage
+      NETMAP_FIELD_SEPARATOR: "${NETMAP_FIELD_SEPARATOR}"
