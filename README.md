@@ -11,6 +11,8 @@ Application web auto-hébergée pour cartographier vos réseaux (plan d'adressag
 Premier démarrage :
 
 ```bash
+git clone https://github.com/TON-COMPTE/NetMap.git
+cd NetMap
 cp .env.example .env            # Créer le fichier .env
 nano .env                       # Choisissez un mot de passe pour l'accès à l'app
 docker compose up -d --build    # Construire et démarrer l'application
